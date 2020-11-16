@@ -1,0 +1,83 @@
+# Microsoft Developer Studio Generated Dependency File, included by DnD.mak
+
+.\ChatView.cpp : \
+	".\ChatView.h"\
+	".\ColorListBox.h"\
+	".\DnD.h"\
+	".\DnDDoc.h"\
+	".\MySocket.h"\
+	".\PTGameObject.h"\
+	
+
+.\ColorListBox.cpp : \
+	".\ColorListBox.h"\
+	
+
+.\ConnView.cpp : \
+	".\ColorListBox.h"\
+	".\ConnView.h"\
+	".\DnD.h"\
+	".\DnDDoc.h"\
+	".\MySocket.h"\
+	".\PTGameObject.h"\
+	
+
+.\DnD.cpp : \
+	".\ColorListBox.h"\
+	".\ConnView.h"\
+	".\DnD.h"\
+	".\DnDDoc.h"\
+	".\DnDView.h"\
+	".\MainFrm.h"\
+	".\MySocket.h"\
+	".\PTGameObject.h"\
+	
+
+.\DnD.rc : \
+	".\res\DnD.ico"\
+	".\res\DnD.rc2"\
+	".\res\DnDDoc.ico"\
+	".\res\Toolbar.bmp"\
+	
+
+.\DnDDoc.cpp : \
+	".\DnD.h"\
+	".\DnDDoc.h"\
+	".\MySocket.h"\
+	".\PTGameObject.h"\
+	
+
+.\DnDView.cpp : \
+	".\DnD.h"\
+	".\DnDDoc.h"\
+	".\DnDView.h"\
+	".\MySocket.h"\
+	".\PTGameObject.h"\
+	
+
+.\MainFrm.cpp : \
+	".\ChatView.h"\
+	".\ColorListBox.h"\
+	".\ConnView.h"\
+	".\DnD.h"\
+	".\DnDDoc.h"\
+	".\MainFrm.h"\
+	".\MySocket.h"\
+	".\PTGameObject.h"\
+	
+
+.\MySocket.cpp : \
+	".\DnD.h"\
+	".\DnDDoc.h"\
+	".\MySocket.h"\
+	".\PTGameObject.h"\
+	
+
+.\PTGameObject.cpp : \
+	".\PTGameObject.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	

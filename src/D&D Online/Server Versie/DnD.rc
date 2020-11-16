@@ -1,0 +1,909 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\DnD.ico"
+IDR_DNDTYPE             ICON    DISCARDABLE     "res\\DnDDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONNECT
+    BUTTON      ID_SKETCH
+    BUTTON      ID_MAP
+    BUTTON      ID_MAPPLAY
+    BUTTON      ID_CHAT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About DnD...",               ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DnD"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "DnD Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DND_FORM DIALOG DISCARDABLE  0, 0, 320, 200
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place form controls on this dialog.",IDC_STATIC,
+                    24,42,280,8
+END
+
+IDD_CONNVIEW DIALOG DISCARDABLE  0, 0, 673, 394
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Start Server",IDC_BTN_STARTSVR,21,23,68,27
+    LISTBOX         IDC_SVRSTATLIST,22,64,450,191,LBS_OWNERDRAWVARIABLE | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_PORT,491,329,40,14,ES_AUTOHSCROLL | ES_NUMBER | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    LTEXT           "Port:",IDC_STATIC,505,286,16,8,NOT WS_VISIBLE
+    CONTROL         "Enable Timout",IDC_BTIMEOUT,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,186,28,61,10
+    PUSHBUTTON      "Debug",IDC_BUTTON1,348,14,50,14,NOT WS_VISIBLE
+    CONTROL         180,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,483,
+                    33,183,222
+    LTEXT           "Server status",IDC_STATIC,21,53,42,8
+    GROUPBOX        "Server information",IDC_STATIC,23,262,448,37
+    LTEXT           "IP of primary adapter:",IDC_STATIC,29,275,68,8
+    LTEXT           "No network adapters found ?!",IDC_IP1,104,275,95,8
+    LTEXT           "Connected hosts:",IDC_STATIC,365,277,56,8
+    LTEXT           "None",IDC_CONHOST,437,276,18,8
+    LTEXT           "http://www.wizards.com/dnd/",IDC_Link,153,379,97,8
+    LTEXT           "Dungeons && Dragons, Wizzards of the Coast :",
+                    IDC_STATIC,7,379,145,8
+END
+
+IDD_CHATVIEW DIALOG DISCARDABLE  0, 0, 562, 390
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Send message",IDC_BTNSEND,311,321,53,14
+    EDITTEXT        IDC_EDITTOSENDCHAT,14,321,292,14,ES_AUTOHSCROLL
+    LTEXT           "ban, clear, kick, list, unban, whisper",IDC_STATIC,41,
+                    349,147,8
+    LTEXT           "Possible commands are (for syntax and meaning, please check manual):",
+                    IDC_STATIC,33,341,227,8
+    GROUPBOX        "Connected players",IDC_STATIC,375,13,155,214
+    CONTROL         133,IDC_HEAD7,"Static",SS_BITMAP | SS_NOTIFY | NOT 
+                    WS_VISIBLE,381,154,43,62
+    COMBOBOX        IDC_COMMANDBOX,423,302,48,51,CBS_DROPDOWNLIST | CBS_SORT | 
+                    NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_USERLIST,415,245,58,50,LBS_OWNERDRAWVARIABLE | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | 
+                    NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_CHATBOX,13,14,352,304,LBS_OWNERDRAWVARIABLE | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    CONTROL         133,IDC_HEAD1,"Static",SS_BITMAP | SS_NOTIFY | NOT 
+                    WS_VISIBLE,381,24,43,62
+    CONTROL         133,IDC_HEAD2,"Static",SS_BITMAP | SS_NOTIFY | NOT 
+                    WS_VISIBLE,431,24,43,62
+    CONTROL         133,IDC_HEAD3,"Static",SS_BITMAP | SS_NOTIFY | NOT 
+                    WS_VISIBLE,479,24,43,62
+    CONTROL         133,IDC_HEAD4,"Static",SS_BITMAP | SS_NOTIFY | NOT 
+                    WS_VISIBLE,381,88,43,62
+    CONTROL         133,IDC_HEAD5,"Static",SS_BITMAP | SS_NOTIFY | NOT 
+                    WS_VISIBLE,431,88,43,62
+    CONTROL         133,IDC_HEAD6,"Static",SS_BITMAP | SS_NOTIFY | NOT 
+                    WS_VISIBLE,479,88,43,62
+    CONTROL         133,IDC_HEAD8,"Static",SS_BITMAP | SS_NOTIFY | NOT 
+                    WS_VISIBLE,431,154,43,62
+    CONTROL         153,IDC_STATIC,"Static",SS_BITMAP,13,338,20,16
+END
+
+IDD_SKETCHVIEW DIALOGEX 0, 0, 609, 395
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_SKETCHBLOCK,"Static",SS_WHITERECT | NOT 
+                    WS_VISIBLE,70,87,357,282,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Line",IDC_LINETOOL,25,126,33,32,BS_BITMAP
+    PUSHBUTTON      "Circle",IDC_CIRCLETOOL,25,163,33,32,BS_BITMAP
+    PUSHBUTTON      "Select",IDC_SELECTTOOL,25,201,33,32,BS_BITMAP | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "Background image",IDC_LOADIMAGEBTN,26,90,33,32,
+                    BS_BITMAP
+    PUSHBUTTON      "Send sketch",IDC_SENDIMAGE,434,184,85,26
+    PUSHBUTTON      "Border color",IDC_COLPICKOUT,437,87,50,14
+    PUSHBUTTON      "Interior color",IDC_COLPICKIN,437,105,50,14
+    PUSHBUTTON      "Clear Image",IDC_CLEAR,193,72,50,14
+    CONTROL         "Live clients update",IDC_LIVEUPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,80,73,75,10
+    CONTROL         "",IDC_SKETCHBLOCK2,"Static",SS_WHITERECT | NOT 
+                    WS_VISIBLE,444,258,115,107,WS_EX_CLIENTEDGE
+    LTEXT           "Miniature (read only):",IDC_STATIC,443,246,66,8
+    CONTROL         153,IDC_STATIC,"Static",SS_BITMAP,13,7,20,16
+    LTEXT           "Draw a simple sketch and send it to the other players. The miniature shows how the players will see your sketch. ",
+                    IDC_STATIC,34,13,446,12
+    LTEXT           "Should you want to load a background image, make sure that: \n    *It is not to large, since all files will need to be sent through.",
+                    IDC_STATIC,30,24,427,17
+    LTEXT           "*If it is large, you can safe bandwidth by presending the files (through email for example) and make sure the clients\n    place the files in the map ""ImageTemp"" in their program folder.",
+                    IDC_STATIC,38,41,429,8
+    CONTROL         "",IDC_COLIN,"Static",SS_BLACKRECT | NOT WS_VISIBLE,491,
+                    105,15,13,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_COLOUT,"Static",SS_BLACKRECT | NOT WS_VISIBLE,491,
+                    87,15,13,WS_EX_CLIENTEDGE
+END
+
+IDD_MAPVIEW DIALOGEX 0, 0, 679, 392
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "New map/Settings...",IDC_SETTINGS,15,14,79,14
+    PUSHBUTTON      "Save Map...",IDC_SAVEMAP,15,33,48,14
+    PUSHBUTTON      "Load map...",IDC_LOADMAP,66,33,50,14
+    EDITTEXT        IDC_MAPNAME,56,50,93,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_MAP,"Static",SS_WHITERECT | NOT WS_VISIBLE,165,22,
+                    488,329,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Room",IDC_ROOMTOOL,29,161,33,15
+    PUSHBUTTON      "Wall",IDC_TOOLCORRIDOR,29,145,33,14
+    COMBOBOX        IDC_ROOMCOMBO,69,163,75,43,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "None",IDC_CURRENTTOOL,31,277,95,9
+    PUSHBUTTON      "Door",IDC_TOOLDOOR,29,181,33,14
+    COMBOBOX        IDC_DOORCOMBO,69,181,75,43,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Undo",IDC_UNDO,28,293,50,14,NOT WS_VISIBLE
+    GROUPBOX        "Tool status",IDC_STATIC,29,269,110,22
+    PUSHBUTTON      "Eraser",IDC_ERASER,29,254,34,14
+    PUSHBUTTON      "Items",IDC_ITEMS,29,197,33,14
+    COMBOBOX        IDC_ITEMSCOMBO,69,197,75,47,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Clear All",IDC_CLEARMAP,86,293,50,14
+    GROUPBOX        "Tools",IDC_STATIC,18,128,138,182
+    LTEXT           "Mapname:",IDC_STATIC,17,53,34,8
+    PUSHBUTTON      "Players",IDC_PLAYERS,29,216,33,14
+    COMBOBOX        IDC_COMBOPLAYERS,69,216,75,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Select",IDC_TOOLSELECT,103,254,34,14
+    PUSHBUTTON      "Monsters",IDC_MONSTER,29,234,34,14
+    COMBOBOX        IDC_COMBOMONSTER,69,234,75,51,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Block info",IDC_STATIC,7,320,148,51
+    PUSHBUTTON      "Del",IDC_DELETESM,13,351,16,14,WS_DISABLED
+    LTEXT           "None",IDC_STATINFOBL,39,330,110,12
+    LTEXT           "None",IDC_STATINFOBL2,39,344,110,11
+    LTEXT           "None",IDC_STATINFOBL3,39,357,110,12
+    COMBOBOX        IDC_LAYERCOMBO,75,107,71,41,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Layers",IDC_STATIC,34,109,22,8
+    LTEXT           "Debug information:",IDC_STATIC,165,7,60,8,NOT 
+                    WS_VISIBLE
+    LTEXT           "/",IDC_STATDEB,227,7,258,8
+END
+
+IDD_MAPPLAY DIALOGEX 0, 0, 676, 399
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Send",IDC_CHATSEND,606,372,50,14
+    EDITTEXT        IDC_CHATMAP,148,371,457,15,ES_AUTOHSCROLL
+    PUSHBUTTON      "START playing",IDC_Start,17,279,119,42
+    PUSHBUTTON      "Load map...",IDC_LOADMAP,7,7,50,14
+    COMBOBOX        IDC_VISCOMBO,47,38,92,65,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Hide/Unhide Area",IDC_UNHIDE,14,117,71,14,NOT 
+                    WS_VISIBLE
+    CONTROL         "Name",IDC_CHECKNAME,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,173,108,10
+    CONTROL         "Name2",IDC_CHECKNAME2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,188,108,10
+    PUSHBUTTON      "^",IDC_UP,63,212,17,17
+    PUSHBUTTON      ">",IDC_RIGHT,87,231,19,14
+    PUSHBUTTON      "\\/",IDC_DOWN,63,250,17,17
+    PUSHBUTTON      "<",IDC_LEFT,39,231,19,14
+    CONTROL         "",IDC_MAP,"Static",SS_WHITERECT | NOT WS_VISIBLE,146,13,
+                    510,314,WS_EX_CLIENTEDGE
+    LTEXT           "View:",IDC_STATIC,22,40,18,8
+    GROUPBOX        "Choose item to move...",IDC_STATIC,15,160,124,114
+    LTEXT           "No map loaded",IDC_STATMAPTITLE,47,26,49,8
+    GROUPBOX        "Visibility tools",IDC_STATIC,14,57,125,59
+    COMBOBOX        IDC_COMBOAREA,47,93,71,53,CBS_DROPDOWN | WS_DISABLED | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "To enable select the view: ""DM-mode (Edit PlayerView)""",
+                    IDC_STATIC,41,68,95,24
+    CONTROL         153,IDC_STATIC,"Static",SS_BITMAP,17,68,20,16
+    LISTBOX         IDC_CHATINMAP,147,334,507,34,NOT LBS_NOTIFY | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+CG_IDD_PROGRESS DIALOG DISCARDABLE  0, 0, 186, 85
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Progress1",CG_IDC_PROGDLG_PROGRESS,"msctls_progress32",
+                    WS_BORDER,15,56,154,13
+    LTEXT           " 0 %",CG_IDC_PROGDLG_PERCENT,85,45,18,8
+    LTEXT           "",CG_IDC_PROGDLG_STATUS,13,7,158,33
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "DnD MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "DnD\0"
+            VALUE "LegalCopyright", "Copyright (C) 2002\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "DnD.EXE\0"
+            VALUE "ProductName", "DnD Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DND_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_CONNVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 666
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 387
+    END
+
+    IDD_CHATVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 555
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 383
+    END
+
+    IDD_SKETCHVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 602
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 388
+    END
+
+    IDD_MAPVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 665
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 376
+    END
+
+    IDD_MAPPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 669
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 392
+    END
+
+    CG_IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CHATVIEW DLGINIT
+BEGIN
+    IDC_COMMANDBOX, 0x403, 8, 0
+0x6877, 0x7369, 0x6570, 0x0072, 
+    IDC_COMMANDBOX, 0x403, 5, 0
+0x696b, 0x6b63, "\000" 
+    IDC_COMMANDBOX, 0x403, 4, 0
+0x6162, 0x006e, 
+    0
+END
+
+IDD_MAPVIEW DLGINIT
+BEGIN
+    IDC_ROOMCOMBO, 0x403, 4, 0
+0x7831, 0x0031, 
+    IDC_ROOMCOMBO, 0x403, 4, 0
+0x7832, 0x0032, 
+    IDC_ROOMCOMBO, 0x403, 4, 0
+0x7833, 0x0033, 
+    IDC_ROOMCOMBO, 0x403, 4, 0
+0x7834, 0x0034, 
+    IDC_ROOMCOMBO, 0x403, 4, 0
+0x7835, 0x0035, 
+    IDC_ROOMCOMBO, 0x403, 6, 0
+0x3031, 0x3178, 0x0030, 
+    IDC_ROOMCOMBO, 0x403, 6, 0
+0x3531, 0x3178, 0x0035, 
+    IDC_ROOMCOMBO, 0x403, 6, 0
+0x3033, 0x3378, 0x0030, 
+    IDC_ROOMCOMBO, 0x403, 6, 0
+0x3035, 0x3578, 0x0030, 
+    IDC_ROOMCOMBO, 0x403, 1, 0
+"\000" 
+    IDC_DOORCOMBO, 0x403, 9, 0
+0x6556, 0x7472, 0x6369, 0x6c61, "\000" 
+    IDC_DOORCOMBO, 0x403, 11, 0
+0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, "\000" 
+    IDC_ITEMSCOMBO, 0x403, 5, 0
+0x7254, 0x7061, "\000" 
+    IDC_ITEMSCOMBO, 0x403, 10, 0
+0x7546, 0x6e72, 0x7469, 0x7275, 0x0065, 
+    IDC_ITEMSCOMBO, 0x403, 4, 0
+0x6950, 0x0074, 
+    IDC_ITEMSCOMBO, 0x403, 9, 0
+0x7254, 0x6165, 0x7573, 0x6572, "\000" 
+    IDC_ITEMSCOMBO, 0x403, 7, 0
+0x6950, 0x6c6c, 0x7261, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6c50, 0x7961, 0x7265, 0x3120, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6c50, 0x7961, 0x7265, 0x3220, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6c50, 0x7961, 0x7265, 0x3320, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6c50, 0x7961, 0x7265, 0x3420, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6c50, 0x7961, 0x7265, 0x3520, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6c50, 0x7961, 0x7265, 0x3620, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6c50, 0x7961, 0x7265, 0x3820, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6c50, 0x7961, 0x7265, 0x3920, "\000" 
+    IDC_COMBOPLAYERS, 0x403, 6, 0
+0x6150, 0x7472, 0x0079, 
+    IDC_COMBOPLAYERS, 0x403, 9, 0
+0x6146, 0x696d, 0x696c, 0x7261, "\000" 
+    IDC_COMBOMONSTER, 0x403, 4, 0
+0x724f, 0x0063, 
+    IDC_COMBOMONSTER, 0x403, 7, 0
+0x6f47, 0x6c62, 0x6e69, "\000" 
+    IDC_COMBOMONSTER, 0x403, 18, 0
+0x6755, 0x796c, 0x6720, 0x6572, 0x6e65, 0x7220, 0x6261, 0x6962, 0x0074, 
+
+    IDC_LAYERCOMBO, 0x403, 4, 0
+0x6c41, 0x006c, 
+    IDC_LAYERCOMBO, 0x403, 10, 0
+0x6c46, 0x6f6f, 0x7072, 0x616c, 0x006e, 
+    IDC_LAYERCOMBO, 0x403, 18, 0
+0x7449, 0x6d65, 0x2073, 0x6e61, 0x2064, 0x6c70, 0x7961, 0x7265, 0x0073, 
+
+    0
+END
+
+IDD_MAPPLAY DLGINIT
+BEGIN
+    IDC_VISCOMBO, 0x403, 20, 0
+0x4d44, 0x6d2d, 0x646f, 0x2065, 0x4628, 0x6c75, 0x206c, 0x6956, 0x7765, 
+0x0029, 
+    IDC_VISCOMBO, 0x403, 8, 0
+0x6c50, 0x7961, 0x7265, 0x0073, 
+    IDC_VISCOMBO, 0x403, 26, 0
+0x4d44, 0x6d2d, 0x646f, 0x2065, 0x4528, 0x6964, 0x2074, 0x6c50, 0x7961, 
+0x7265, 0x6956, 0x7765, 0x0029, 
+    IDC_COMBOAREA, 0x403, 4, 0
+0x7831, 0x0031, 
+    IDC_COMBOAREA, 0x403, 4, 0
+0x7832, 0x0032, 
+    IDC_COMBOAREA, 0x403, 4, 0
+0x7833, 0x0033, 
+    IDC_COMBOAREA, 0x403, 4, 0
+0x7834, 0x0034, 
+    IDC_COMBOAREA, 0x403, 4, 0
+0x7835, 0x0035, 
+    IDC_COMBOAREA, 0x403, 6, 0
+0x3031, 0x3178, 0x0030, 
+    IDC_COMBOAREA, 0x403, 6, 0
+0x3531, 0x3178, 0x0035, 
+    IDC_COMBOAREA, 0x403, 6, 0
+0x3035, 0x3578, 0x0030, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+    CG_IDS_PROGRESS_CAPTION "Progress Dialog"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "DnD\n\nDnD\nDnD Files (*.dnd)\n.dnd\nDnD.Document\nDnD Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "DnD"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CONNECT              "Server settings\nConnection"
+    ID_CHAT                 "Chat-interaction screen\nChat"
+    ID_SKETCH               "Sketchbook\nSketchbook"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MAP                  "Mapeditor\nMapeditor"
+    ID_MAPPLAY              "Play the game\nMapplay"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Dutch (Belgium) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NLB)
+#ifdef _WIN32
+LANGUAGE LANG_DUTCH, SUBLANG_DUTCH_BELGIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DEFHEAD             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_LINE                BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDB_CIRCLE              BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_SELECT              BITMAP  DISCARDABLE     "res\\bmp00003.bmp"
+IDB_INFO                BITMAP  DISCARDABLE     "res\\info.bmp"
+TILE_ROOM               BITMAP  DISCARDABLE     "Tiles\\roomtile.bmp"
+TILE_CORRIDOR           BITMAP  DISCARDABLE     "Tiles\\corridortile.bmp"
+TILE_HERO               BITMAP  DISCARDABLE     "Tiles\\herotile.bmp"
+TILE_PARTY              BITMAP  DISCARDABLE     "Tiles\\partytile.bmp"
+TILE_FURNITURE          BITMAP  DISCARDABLE     "Tiles\\furnituretile.bmp"
+TILE_PIT                BITMAP  DISCARDABLE     "Tiles\\pittile.bmp"
+TILE_TREASURE           BITMAP  DISCARDABLE     "Tiles\\treasuretile.bmp"
+IDB_BCKGRND             BITMAP  DISCARDABLE     "tiles\\bitmap1.bmp"
+IDB_PAGETITLE           BITMAP  DISCARDABLE     "Tiles\\fireorig.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+CG_IDR_POPUP_CHAT_VIEW MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "Player &Stats",               ID_POPUP_PLAYERSTATS, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Ban",                         ID_POPUP_BAN, GRAYED
+        MENUITEM "Kick",                        ID_POPUP_KICK, GRAYED
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAPSETDLG DIALOG DISCARDABLE  0, 0, 220, 214
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Map Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_BLOCKS,50,15,30,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,73,15,11,
+                    14
+    CONTROL         "Display grid",IDC_DISPGRID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,123,17,52,10
+    CONTROL         "Hi-Res",IDC_CHECKHIRES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,34,90,37,10
+    CONTROL         "Show cleanup information , CheckMap()",IDC_CHECKCP,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,121,142,10
+    PUSHBUTTON      "Clear map",IDC_CLEARBUTTON,33,149,50,14
+    DEFPUSHBUTTON   "OK",IDOK,33,183,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,149,183,50,14
+    LTEXT           "Blocksize:",IDC_STATIC,14,15,33,8
+    CONTROL         153,IDC_STATIC,"Static",SS_BITMAP,13,45,20,16
+    LTEXT           "Hi-res mode may cause flickering and is not recommended when using an older/slower computer. There are still some glitches (eg wrong transparency) that need to be worked on; the speed of the redrawing should be a lot faster once code is optimized.",
+                    IDC_STATIC,34,44,172,42
+    GROUPBOX        "Debug",IDC_STATIC,7,34,206,104
+END
+
+IDD_STATSDIALOG DIALOG DISCARDABLE  0, 0, 213, 262
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Player Stats"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,49,79,51,14
+    EDITTEXT        IDC_ARMOR,78,152,107,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEMS,78,171,107,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STRENGTH,78,190,19,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEXTERITY,78,209,19,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CONSTITUTION,78,229,19,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INTELLIGENCE,166,190,19,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WISDOM,166,209,19,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CHARISMA,166,229,19,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_USERNAME,78,24,107,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_CHARNAME,78,42,107,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "&Update",IDDOCHANGES,111,79,51,14
+    PUSHBUTTON      "&Ban",IDBAN,111,107,51,14
+    RTEXT           "Username:",IDC_STATIC,34,26,33,8
+    RTEXT           "Charactername:",IDC_STATIC,16,44,51,8
+    GROUPBOX        "General Information",IDC_STATIC,9,7,195,58
+    GROUPBOX        "Player Statistics",IDC_STATIC,9,136,195,119
+    RTEXT           "Armor Class:",IDC_STATIC,21,154,46,12
+    RTEXT           "Items:",IDC_STATIC,21,173,46,12
+    RTEXT           "Strength:",IDC_STATIC,21,192,46,12
+    RTEXT           "Dexterity:",IDC_STATIC,22,211,46,12
+    RTEXT           "Constitution:",IDC_STATIC,21,231,46,12
+    RTEXT           "Intelligence:",IDC_STATIC,105,192,48,12
+    RTEXT           "Wisdom:",IDC_STATIC,105,211,48,12
+    RTEXT           "Charisma:",IDC_STATIC,105,231,48,12
+    CONTROL         "",IDC_GIF1,"Static",SS_BLACKRECT,18,77,20,22
+    CONTROL         "",IDC_GIF2,"Static",SS_BLACKRECT,174,77,20,22
+    PUSHBUTTON      "&Kick",IDKICK,49,107,51,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MAPSETDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_STATSDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 255
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\DnD.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#include ""afxdb.rc""          // Database resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Dutch (Belgium) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\DnD.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#include "afxdb.rc"          // Database resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
